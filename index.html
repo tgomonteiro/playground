@@ -12,9 +12,8 @@
     const button = document.querySelector('#okButton');
 
     function handleButton() {
-
-      button.disabled = true;
-      button.innerHTML = 'LOADING...'
+      this.disabled = true;
+      this.innerHTML = 'LOADING...'
 
       window.location.replace('gympass://gympass/keycloak_authorizer?action_token=1234');
 
@@ -24,6 +23,7 @@
         );
       }, 5000);
     };
+
     button.addEventListener('click', handleButton);
   </script>
 </body>
