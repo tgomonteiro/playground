@@ -23,14 +23,6 @@
       window.location.replace(isAndroid
         ? 'gympass://gympass/keycloak_authorizer?action_token=1234'
         : 'gympass://keycloak_authorizer?action_token=1234');
-
-      setTimeout(() => {
-        if (new Date().valueOf() - now > 2500) return;
-        window.location.replace(isAndroid
-          ? 'https://play.google.com/store/apps/details?id=com.gympass'
-          : 'https://apps.apple.com/app/gympass/id703761434'
-        );
-      }, 2000);
     };
 
     button.addEventListener('click', handleButton);
