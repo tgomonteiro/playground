@@ -16,18 +16,21 @@
       this.innerHTML = 'LOADING...'
 
       const userAgent = navigator.userAgent.toLowerCase();
-      const isAndroid = userAgent.includes('android')
+      const isAndroid = userAgent.includes('android');
+
+      const now = new Date().valueOf();
 
       window.location.replace(isAndroid
         ? 'gympass://gympass/keycloak_authorizer?action_token=1234'
         : 'gympass://keycloak_authorizer?action_token=1234');
 
       setTimeout(() => {
+        if (new Date().valueOf() - now > 100) return;
         window.location.replace(isAndroid
           ? 'https://play.google.com/store/apps/details?id=com.gympass'
           : 'https://apps.apple.com/app/gympass/id703761434'
         );
-      }, 3000);
+      }, 2000);
     };
 
     button.addEventListener('click', handleButton);
