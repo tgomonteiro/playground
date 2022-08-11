@@ -7,12 +7,23 @@
   <title>Playground</title>
 </head>
 <body>
-  <button id="okButton">OK</button>
+  <button id="okButton">GO TO GYMPASS</button>
   <script>
-    function handleButton() {
-      window.location = 'gympass://gympass/keycloak_authorizer?action_token=1234';
-    };
     const button = document.querySelector('#okButton');
+
+    function handleButton() {
+
+      button.disabled = true;
+      button.innerHTML = 'LOADING...'
+
+      window.location.replace('gympass://gympass/keycloak_authorizer?action_token=1234');
+
+      setTimeout(() => {
+        window.location.replace(
+          'https://play.google.com/store/apps/details?id=com.gympass',
+        );
+      }, 5000);
+    };
     button.addEventListener('click', handleButton);
   </script>
 </body>
