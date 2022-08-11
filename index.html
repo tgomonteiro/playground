@@ -5,15 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Playground</title>
+</head>
+<body>
+  <button id="okButton">OK</button>
   <script>
     function handleButton() {
       window.location = 'gympass://gympass/keycloak_authorizer?action_token=1234';
     };
-    const button = document.getElementById('okButton');
+    const button = document.querySelector('#okButton');
     button.addEventListener('click', handleButton);
   </script>
-</head>
-<body>
-  <button id="okButton">OK</button>
 </body>
 </html>
